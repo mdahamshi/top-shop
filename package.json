@@ -12,6 +12,7 @@
     "format": "npx prettier --write ."
   },
   "dependencies": {
+    "@sarawebs/sb-utils": "^2.0.0",
     "lucide-react": "^0.525.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",

@@ -1,0 +1,29 @@
+import React from 'react';
+import './css/Navbar.css'
+import { NavLink } from 'react-router-dom';
+export default function Navbar({links = []}) {
+  return (
+    <>
+      <nav className='sb-nav'>
+        {links.length ? (
+          <ul>
+            {links.map((link) => (
+              <li key={link.id}>
+                <NavLink
+                  to={`/${link.id === 'home' ? '' : link.id}`}
+                  className={'clickable'}
+                >
+                  {link.icon || link.text}{' '}
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        ) : (
+          <p>
+            <i>No links</i>
+          </p>
+        )}
+      </nav>
+    </>
+  );
+}

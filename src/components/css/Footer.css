@@ -1,0 +1,12 @@
+.sb-footer {
+  margin-top: auto;
+  padding: 8px;
+}
+
+footer a {
+  color: var(--sb-theme-color);
+  text-decoration: none;
+}
+footer p {
+  text-align: center;
+}
