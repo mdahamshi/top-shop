@@ -15,4 +15,3 @@
     grid-template-columns: repeat(var(--cols-desktop), 1fr);
   }
 }
-

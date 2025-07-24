@@ -1,16 +1,16 @@
-import {ShoppingCart} from 'lucide-react'
+import { ShoppingCart } from 'lucide-react';
 
 export const links = [
   {
     id: 'home',
-    text: 'Home'
+    text: 'Home',
   },
   {
     id: 'shop',
-    text: 'Shop'
+    text: 'Shop',
   },
   {
     id: 'cart',
-    icon: <ShoppingCart />
-  }
+    icon: <ShoppingCart />,
+  },
 ];

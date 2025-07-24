@@ -27,7 +27,7 @@ export default function Root({ appName = 'This Site' }) {
       />
 
       <main>
-      {navigation.state === 'loading' && <LoadingOverlay />}
+        {navigation.state === 'loading' && <LoadingOverlay />}
         <Outlet />
       </main>
 

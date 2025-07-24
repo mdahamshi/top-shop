@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   z-index: 999;
-    animation: fadeIn 0.3s ease-in-out;
+  animation: fadeIn 0.3s ease-in-out;
 }
 
 .global-loading-col {
@@ -27,7 +27,6 @@
   width: 100%;
   max-width: 300px;
   color: var(--sb-theme-color);
-
 }
 
 .spinner {

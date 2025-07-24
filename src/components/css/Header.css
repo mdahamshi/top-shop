@@ -27,7 +27,6 @@
 
 .header-left {
   margin-right: 1rem;
-  
 }
 
 .header-right ul {
@@ -35,7 +34,6 @@
   display: flex;
   list-style: none;
   gap: 16px;
-
 }
 
 .header-main {

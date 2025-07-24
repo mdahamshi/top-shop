@@ -13,7 +13,7 @@ export default function Shop() {
   if (!products || !products.length) return <p>No products found !</p>;
   return (
     <div>
-      <Grid children={products}  />
+      <Grid children={products} />
     </div>
   );
 }

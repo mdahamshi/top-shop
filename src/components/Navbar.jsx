@@ -1,10 +1,10 @@
 import React from 'react';
-import './css/Navbar.css'
+import './css/Navbar.css';
 import { NavLink } from 'react-router-dom';
-export default function Navbar({links = []}) {
+export default function Navbar({ links = [] }) {
   return (
     <>
-      <nav className='sb-nav'>
+      <nav className="sb-nav">
         {links.length ? (
           <ul>
             {links.map((link) => (

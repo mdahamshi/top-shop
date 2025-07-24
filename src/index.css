@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 
-
-
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -52,7 +50,6 @@ a {
   text-decoration: inherit;
 }
 
-
 body {
   margin: 0;
   display: flex;
@@ -60,7 +57,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100dvh;
-  background-color: var(--sb-conent-bg)
+  background-color: var(--sb-conent-bg);
 }
 
 h1 {
@@ -68,7 +65,8 @@ h1 {
   line-height: 1.1;
 }
 
-button, .link-btn {
+button,
+.link-btn {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6rem 1.2rem;
@@ -78,11 +76,13 @@ button, .link-btn {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button, .link-btn {
-    background-color: rgb(245, 243, 243);
-    color: var(--sb-theme-color);
+button,
+.link-btn {
+  background-color: rgb(245, 243, 243);
+  color: var(--sb-theme-color);
 }
-button.primary, .link-btn.primary {
+button.primary,
+.link-btn.primary {
   background-color: var(--sb-theme-color);
   color: white;
 }
@@ -90,7 +90,8 @@ button a {
   color: inherit;
 }
 .clickable:hover,
-button:hover, .link-btn:hover {
+button:hover,
+.link-btn:hover {
   filter: brightness(1.1);
   cursor: pointer;
   transform: scale(1.03);
@@ -107,6 +108,3 @@ button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
-
-
-

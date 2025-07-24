@@ -2,7 +2,7 @@ import { createRoutesFromElements, Route } from 'react-router-dom';
 import Errorpage from './Errorpage';
 import Root from './Root';
 import Home from './Home';
-import Shop, {loader as shopLoader} from './Shop';
+import Shop, { loader as shopLoader } from './Shop';
 
 export const routefromelement = createRoutesFromElements(
   <Route path="/" element={<Root appName="SaraShop" />}>

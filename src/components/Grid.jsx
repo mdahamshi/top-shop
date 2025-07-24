@@ -1,7 +1,12 @@
 import React from 'react';
 import './css/Grid.css';
-import Griditem from './Griditem'
-export default function Grid({ children, colsDesktop = 4, colsTablet = 2, colsMobile = 1 }) {
+import Griditem from './Griditem';
+export default function Grid({
+  children,
+  colsDesktop = 4,
+  colsTablet = 2,
+  colsMobile = 1,
+}) {
   return (
     <div
       className="compassion-grid"
@@ -13,17 +18,16 @@ export default function Grid({ children, colsDesktop = 4, colsTablet = 2, colsMo
     >
       {children.map((child, index) => (
         <div key={child.id ? child.id : index} className="grid-item">
-          <Griditem 
-          title={child.title}
-          description={child.description}
-          image={child.image}
-          price={child.price}
-          count={child.rating.count}
-          rate={child.rating.rate}
+          <Griditem
+            title={child.title}
+            description={child.description}
+            image={child.image}
+            price={child.price}
+            count={child.rating.count}
+            rate={child.rating.rate}
           />
         </div>
       ))}
     </div>
   );
 }
-

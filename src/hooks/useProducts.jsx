@@ -5,10 +5,10 @@ export function useProducts(limit = 12) {
   const dataURL = `https://fakestoreapi.com/products?limit=${limit}`;
   useEffect(() => {
     const dataFetch = async () => {
-      fetch(dataURL, {mode: 'cors'})
-      .then((response) => response.json())
-      .then((data) => setProducts(data));
-    }
+      fetch(dataURL, { mode: 'cors' })
+        .then((response) => response.json())
+        .then((data) => setProducts(data));
+    };
     dataFetch();
   }, [dataURL, products]);
 
