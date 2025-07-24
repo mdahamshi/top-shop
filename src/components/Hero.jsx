@@ -1,6 +1,6 @@
 import React from 'react';
 import './css/Hero.css';
-import heroImage from '../assets/hero.webp';
+import heroImage from '../../public/hero.webp';
 import { Link } from 'react-router-dom';
 import { useApp } from '../context/AppContext';
 export default function Hero() {

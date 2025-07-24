@@ -8,7 +8,12 @@ const router = createBrowserRouter(routefromelement);
 import { AppContext } from './context/AppContext';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AppContext.Provider value={{ appName: 'SaraShop' }}>
+    <AppContext.Provider
+      value={{
+        appName: 'SaraShop',
+        productsPath: '/products',
+      }}
+    >
       <RouterProvider router={router} />
     </AppContext.Provider>
   </StrictMode>

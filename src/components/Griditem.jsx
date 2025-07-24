@@ -1,7 +1,8 @@
 import React from 'react';
 import './css/Griditem.css';
+import { Link } from 'react-router-dom';
 
-export default function Griditem({ title, image, rate, count, price }) {
+export default function Griditem({ title, image, rate, count, price, link }) {
   const fullStars = Math.floor(rate);
   const hasHalfStar = rate % 1 >= 0.5;
   const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
@@ -15,7 +16,7 @@ export default function Griditem({ title, image, rate, count, price }) {
   };
 
   return (
-    <div className="grid-card">
+    <Link to={link} className="grid-card-link grid-card">
       {image && (
         <div
           className="grid-card-image"
@@ -32,6 +33,6 @@ export default function Griditem({ title, image, rate, count, price }) {
           <div className="grid-card-price">${price.toFixed(2)}</div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 }
