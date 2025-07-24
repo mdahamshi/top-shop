@@ -40,6 +40,23 @@ main {
   width: 100%;
 }
 
+main {
+  animation-duration: 0.5s;
+  animation-name: animate-fade;
+  animation-delay: 0.5s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes animate-fade {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 #root {
   min-height: 100%;
   display: flex;
@@ -80,19 +97,23 @@ button,
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
 button,
 .link-btn {
   background-color: rgb(245, 243, 243);
   color: var(--sb-theme-color);
 }
+
 button.primary,
 .link-btn.primary {
   background-color: var(--sb-theme-color);
   color: white;
 }
+
 button a {
   color: inherit;
 }
+
 .clickable:hover,
 button:hover,
 .link-btn:hover {

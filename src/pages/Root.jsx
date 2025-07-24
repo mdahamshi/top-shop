@@ -9,6 +9,7 @@ import { links } from '../assets/links';
 import { getRandomColor } from '@sarawebs/sb-utils';
 import { useProducts } from '../hooks/useProducts';
 import { useApp } from '../context/AppContext';
+import { useLocation } from 'react-router-dom';
 
 export default function Root() {
   const navigation = useNavigation();
@@ -29,7 +30,7 @@ export default function Root() {
         right={<Navbar links={links} />}
       />
 
-      <main>
+      <main key={location.pathname}>
         {navigation.state === 'loading' && <LoadingOverlay />}
         <Outlet />
       </main>

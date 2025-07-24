@@ -29,6 +29,7 @@
 
 .header-left {
   margin-right: 1rem;
+  color: var(--sb-theme-color);
 }
 
 .header-right ul {
