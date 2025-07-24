@@ -12,6 +12,7 @@ createRoot(document.getElementById('root')).render(
       value={{
         appName: 'SaraShop',
         productsPath: '/products',
+        happyCustomers: 3821,
       }}
     >
       <RouterProvider router={router} />

@@ -8,8 +8,12 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import './css/TrustIndicators.css';
+import { useApp } from '../context/AppContext';
+
 import payment from '../../public/payment.webp';
 export default function TrustIndicators() {
+  const { happyCustomers } = useApp();
+
   return (
     <section className="trust-container">
       <div className="trust-icons">
@@ -20,7 +24,7 @@ export default function TrustIndicators() {
         <div className="trust-item">
           <Smile size={32} strokeWidth={2} />
           <p>
-            <strong>6150</strong> Happy customers
+            <strong>{happyCustomers}</strong> Happy customers
           </p>
         </div>
         <div className="trust-item">
