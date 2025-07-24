@@ -1,7 +1,9 @@
 import React from 'react';
 import './css/Footer.css';
+import { useApp } from '../context/AppContext';
 
-export default function Footer({ appName = 'This Site' }) {
+export default function Footer() {
+  const { appName } = useApp();
   return (
     <footer className="sb-footer">
       <div>

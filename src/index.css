@@ -21,6 +21,8 @@
   --sb-conent-bg: #fcf9f8;
   --sb-corner-radius: 12px;
   --sb-padding: 16px;
+  --sb-mobile-break-width: 700px;
+  --sb-header-height: 70px;
   --sb-max-content-width: 1024px;
   --sb-border-color-thin: #f0f1f4;
   --sb-hero-bgc: #0891b2;
@@ -35,6 +37,7 @@ main {
   margin-top: 70px;
   max-width: var(--sb-max-content-width);
   padding: 24px;
+  width: 100%;
 }
 
 #root {
@@ -42,6 +45,7 @@ main {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  width: 100%;
 }
 
 a {

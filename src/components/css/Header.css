@@ -9,8 +9,10 @@
   top: 0;
   left: 0;
   width: 100%;
+  height: var(--sb-header-height, 70px);
   background-color: white;
   color: var(--sb-theme-color);
+  z-index: 5;
 }
 .header-content {
   padding: 1rem 1.5rem;
@@ -34,6 +36,7 @@
   display: flex;
   list-style: none;
   gap: 16px;
+  align-items: center;
 }
 
 .header-main {

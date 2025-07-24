@@ -5,10 +5,12 @@ import './LoadingOverly.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { routefromelement } from './pages/routes';
 const router = createBrowserRouter(routefromelement);
-
+import { AppContext } from './context/AppContext';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AppContext.Provider value={{ appName: 'SaraShop' }}>
+      <RouterProvider router={router} />
+    </AppContext.Provider>
   </StrictMode>
 );
 

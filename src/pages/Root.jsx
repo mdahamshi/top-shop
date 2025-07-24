@@ -8,8 +8,11 @@ import LoadingOverlay from '../components/LoadingOverly';
 import { links } from '../assets/links';
 import { getRandomColor } from '@sarawebs/sb-utils';
 import { useProducts } from '../hooks/useProducts';
-export default function Root({ appName = 'This Site' }) {
+import { useApp } from '../context/AppContext';
+
+export default function Root() {
   const navigation = useNavigation();
+  const { appName } = useApp();
 
   useEffect(() => {
     document.documentElement.style.setProperty(
@@ -22,7 +25,7 @@ export default function Root({ appName = 'This Site' }) {
     <>
       <Header
         subtitle=""
-        left={<h2 className="header-logo">SaraShop</h2>}
+        left={<h2 className="header-logo">{appName}</h2>}
         right={<Navbar links={links} />}
       />
 
@@ -31,7 +34,7 @@ export default function Root({ appName = 'This Site' }) {
         <Outlet />
       </main>
 
-      <Footer appName={appName} />
+      <Footer />
     </>
   );
 }
