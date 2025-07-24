@@ -1,19 +1,16 @@
 .hero {
   padding: 4rem 1rem;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   justify-content: center;
-  min-height: 60vh;
-  width: 100dvw;
-  position: fixed;
-  left: 0;
   top: var(--sb-header-height, 70px);
   z-index: 0;
-
-  border-bottom: 1px solid #ddd;
+  overflow: hidden;
 }
+
 .hero-wrap {
   display: flex;
   flex-direction: column;
@@ -23,10 +20,14 @@
   gap: 32px;
   max-width: var(--sb-max-content-width);
 }
+
 .hero::before {
   content: '';
-  position: absolute;
-  inset: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
   background: var(--sb-theme-color);
   opacity: 0.2;
   z-index: -1;
