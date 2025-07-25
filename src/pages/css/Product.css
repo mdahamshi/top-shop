@@ -54,6 +54,6 @@
 }
 .product-added {
   text-align: center;
-  color: green;
+  color: var(--sb-theme-color, green);
   margin-top: 8px;
 }
