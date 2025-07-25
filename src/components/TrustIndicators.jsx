@@ -18,17 +18,17 @@ export default function TrustIndicators() {
     <section className="trust-container">
       <div className="trust-icons">
         <div className="trust-item">
-          <Truck size={32} strokeWidth={2} />
+          <Truck />
           <p>Free Shipping</p>
         </div>
         <div className="trust-item">
-          <Smile size={32} strokeWidth={2} />
+          <Smile />
           <p>
             <strong>{happyCustomers}</strong> Happy customers
           </p>
         </div>
         <div className="trust-item">
-          <RotateCcw size={32} strokeWidth={2} />
+          <RotateCcw />
           <p>Easy returns</p>
         </div>
       </div>

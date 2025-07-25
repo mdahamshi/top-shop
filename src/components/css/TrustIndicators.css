@@ -21,7 +21,11 @@
   align-items: center;
   color: var(--sb-theme-color);
 }
-
+.trust-item svg.lucide {
+  stroke-width: 2px;
+  width: 36px;
+  height: 36px;
+}
 .trust-item p {
   margin-top: 0.5rem;
   font-size: 0.95rem;
