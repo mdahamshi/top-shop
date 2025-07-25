@@ -67,7 +67,7 @@ export default function Product() {
         <button onClick={handleAddToCart} className="primary add-to-cart">
           Add to Cart
         </button>
-        {totalItems && (
+        {totalItems > 0 && (
           <Link to={'/checkout'} className="link-btn">
             Go to checkout
           </Link>
