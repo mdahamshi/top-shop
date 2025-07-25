@@ -5,6 +5,7 @@ import { useLoaderData } from 'react-router-dom';
 import TrustIndicators from '../components/TrustIndicators';
 import { useCart } from '../context/CartContext';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 export async function loader({ params }) {
   const product = await fetchProducts({
     id: params.productId,
@@ -21,7 +22,7 @@ export async function loader({ params }) {
 
 export default function Product() {
   const { product } = useLoaderData();
-  const { addItem } = useCart();
+  const { addItem, totalItems } = useCart();
   const [added, setAdded] = useState(false);
 
   const { title, image, price, description } = { ...product };
@@ -66,6 +67,11 @@ export default function Product() {
         <button onClick={handleAddToCart} className="primary add-to-cart">
           Add to Cart
         </button>
+        {totalItems && (
+          <Link to={'/checkout'} className="link-btn">
+            Go to checkout
+          </Link>
+        )}
         {added && <p className="product-added">Item added successfully!</p>}
 
         <TrustIndicators />

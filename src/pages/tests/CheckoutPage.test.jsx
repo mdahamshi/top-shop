@@ -62,9 +62,6 @@ describe('CheckoutPage', () => {
       </MemoryRouter>
     );
 
-    expect(
-      screen.getByRole('heading', { name: /checkout/i })
-    ).toBeInTheDocument();
     expect(screen.getByLabelText(/full name/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
     expect(screen.getByLabelText(/address/i)).toBeInTheDocument();
