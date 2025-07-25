@@ -1,86 +1,46 @@
-# React Base Template ⚛️🚀
+## 🛍️ SaraShop
 
-A minimal, fast, and modern **React + Vite** starter template — perfect for bootstrapping new front-end projects.
+**SaraShop** is a modern, fast, and responsive eCommerce web application built with **React** and **React Router**. It features a smooth shopping experience, dynamic product pages, cart management, and elegant UI components.
 
-## 🔧 Features
+SaraShop Project, [TOP project](https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart)
+### ✨ Features
 
-- ⚡ **Vite** – super fast bundler
-- ⚛️ **React 19** – modern component architecture
-- 🧼 **Prettier** – consistent code formatting
-- 📁 Clean project structure
-- 🧼 Preconfigured ESLint and Prettier (optional)
-- ✅ Ready for customization
+* 🛒 **Shopping Cart** with context-based global state
+* 🔄 **Product Loader** via `react-router-dom` data APIs
+* ⭐ **Rating System** using stars and reviews
+* 📦 **Add to Cart** with success feedback and checkout link
+* 🧠 **Reusable Components** like `GridItem`, `Hero`, and more
+* 📱 **Responsive Design** for all screen sizes
+* ⚛️ Built using **React 18** and modern hooks (e.g., `useState`, `useEffect`, `useContext`)
+* ✅ **Tested with Vitest** and `@testing-library/react`
 
-## 🚀 Getting Started
+### 🧩 Tech Stack
 
-Clone this repo:
+* **Frontend:** React, React Router
+* **State Management:** Context API
+* **Styling:** CSS (flat, clean UI)
+* **Testing:** Vitest, React Testing Library
+* **Bundler:** Vite
+
+### 🚀 Getting Started
 
 ```bash
-git clone https://github.com/mdahamshi/react-base.git
-cd react-base
+git clone https://github.com/your-username/sarashop.git
+cd sarashop
 npm install
 npm run dev
 ```
 
-## 📁 Project Structure
+### 🧪 Run Tests
 
-```
-.
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── App.jsx
-│   └── main.jsx
-├── .gitignore
-├── index.html
-├── package.json
-├── README.md
-└── vite.config.js
+```bash
+npm run test
 ```
 
-## 🛠️ Scripts
+[Code at GitHub](https://github.com/mdahamshi/top-shop)
 
-| Script            | Description              |
-| ----------------- | ------------------------ |
-| `npm run dev`     | Start dev server         |
-| `npm run build`   | Build for production     |
-| `npm run preview` | Preview production build |
-| `npm run format`  | Format all project files |
+[Live DEMO](https://link.dahamshi.xyz/top-shop)
 
-## 📦 Dependencies
+![screenshot](./sc.png)
 
-- `react`
-- `react-dom`
-- `vite`
-- `prettier`
-
-## 🧪 Dev Tools (Optional)
-
-You can easily integrate:
-
-- ESLint
-- Prettier
-- Tailwind CSS
-- React Router
-- Zustand / Redux
-- Vitest or Jest
-
-## 🌍 Deployment
-
-You can deploy this template easily to:
-
-- **Vercel**
-- **Netlify**
-- **GitHub Pages** (with `vite.config.js` adjustments)
-
-## 🧑‍💻 Author
-
-**Mohammad Dahamshi**
-Website: [sarawebs.com](https://sarawebs.com)
-GitHub: [@mdahamshi](https://github.com/mdahamshi)
-
----
-
-Enjoy building with React + Vite! ⚛️✨
+![screenshot](./sc2.png)
