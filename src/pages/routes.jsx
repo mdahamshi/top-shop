@@ -4,7 +4,8 @@ import Root from './Root';
 import Home from './Home';
 import Product, { loader as productLoader } from './Product';
 import Shop, { loader as shopLoader } from './Shop';
-
+import Cart from './Cart';
+import CheckoutPage from './CheckoutPage';
 export const routefromelement = createRoutesFromElements(
   <Route path="/" element={<Root appName="SaraShop" />}>
     <Route errorElement={<Errorpage />}>
@@ -16,6 +17,9 @@ export const routefromelement = createRoutesFromElements(
         path="/products/:productId"
       />
       <Route loader={shopLoader} element={<Shop />} path="/shop" />
+      <Route element={<Cart />} path="/cart" />
+      <Route path="/checkout" element={<CheckoutPage />} />
+
       <Route path="*" element={<Errorpage />} />
     </Route>
   </Route>

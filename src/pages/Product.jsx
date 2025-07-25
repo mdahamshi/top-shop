@@ -3,6 +3,8 @@ import './css/Product.css';
 import { fetchProducts } from '../api/fakeProducts';
 import { useLoaderData } from 'react-router-dom';
 import TrustIndicators from '../components/TrustIndicators';
+import { useCart } from '../context/CartContext';
+
 export async function loader({ params }) {
   const product = await fetchProducts({
     id: params.productId,
@@ -19,6 +21,7 @@ export async function loader({ params }) {
 
 export default function Product() {
   const { product } = useLoaderData();
+  const { addItem } = useCart();
   const { title, image, price, description } = { ...product };
   const { rate, count } = { ...product.rating };
 
@@ -31,6 +34,16 @@ export default function Product() {
     if (hasHalfStar) stars.push('☆');
     for (let i = 0; i < emptyStars; i++) stars.push('☆');
     return stars.join(' ');
+  };
+
+  const handleAddToCart = () => {
+    addItem({
+      id: product.id,
+      title: product.title,
+      price: product.price,
+      image: product.image,
+      quantity: 1,
+    });
   };
 
   return (
@@ -46,7 +59,9 @@ export default function Product() {
         </div>
         <div className="product-price">${price.toFixed(2)}</div>
         <p className="product-description">{description}</p>
-        <button className="primary add-to-cart">Add to Cart</button>
+        <button onClick={handleAddToCart} className="primary add-to-cart">
+          Add to Cart
+        </button>
         <TrustIndicators />
       </div>
     </div>

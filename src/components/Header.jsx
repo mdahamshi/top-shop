@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { ShoppingCart } from 'lucide-react';
-
+import CartButton from './CartButton';
 export default function Header({
   title,
   subtitle,
@@ -50,9 +50,7 @@ export default function Header({
             <nav className={`navbar ${menuOpen ? 'open' : ''} sb-nav`}>
               {right}
             </nav>
-            <button className="cart-btn primary clickable">
-              <ShoppingCart />
-            </button>
+            <CartButton />
           </div>
         )}
       </div>

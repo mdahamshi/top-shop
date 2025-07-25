@@ -12,7 +12,7 @@ export default function Navbar({ links = [] }) {
                 to={`/${link.id === 'home' ? '' : link.id}`}
                 className={'clickable'}
               >
-                {link.icon || link.text}{' '}
+                {link.text}{' '}
               </NavLink>
             </li>
           ))}

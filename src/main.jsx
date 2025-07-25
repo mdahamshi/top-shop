@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { routefromelement } from './pages/routes';
 const router = createBrowserRouter(routefromelement);
 import { AppContext } from './context/AppContext';
+import { CartProvider } from './context/CartContext';
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <AppContext.Provider
@@ -15,7 +17,9 @@ createRoot(document.getElementById('root')).render(
         happyCustomers: 3821,
       }}
     >
-      <RouterProvider router={router} />
+      <CartProvider>
+        <RouterProvider router={router} />
+      </CartProvider>
     </AppContext.Provider>
   </StrictMode>
 );
