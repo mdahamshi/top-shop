@@ -7,7 +7,7 @@ export function CartProvider({ children }) {
   const storageCartName = `${appName}-cart`;
   const [items, setItems] = useState(() => {
     const stored = localStorage.getItem(storageCartName);
-    return Array.isArray(stored) ? JSON.parse(stored) : [];
+    return typeof stored === 'string' ? JSON.parse(stored) : [];
   });
 
   useEffect(() => {
