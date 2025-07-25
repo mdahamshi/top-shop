@@ -52,3 +52,8 @@
   border-radius: 4px;
   width: 100%;
 }
+.product-added {
+  text-align: center;
+  color: green;
+  margin-top: 8px;
+}

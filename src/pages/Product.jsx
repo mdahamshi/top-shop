@@ -4,7 +4,7 @@ import { fetchProducts } from '../api/fakeProducts';
 import { useLoaderData } from 'react-router-dom';
 import TrustIndicators from '../components/TrustIndicators';
 import { useCart } from '../context/CartContext';
-
+import { useState } from 'react';
 export async function loader({ params }) {
   const product = await fetchProducts({
     id: params.productId,
@@ -22,6 +22,8 @@ export async function loader({ params }) {
 export default function Product() {
   const { product } = useLoaderData();
   const { addItem } = useCart();
+  const [added, setAdded] = useState(false);
+
   const { title, image, price, description } = { ...product };
   const { rate, count } = { ...product.rating };
 
@@ -44,6 +46,8 @@ export default function Product() {
       image: product.image,
       quantity: 1,
     });
+    setAdded(true);
+    setTimeout(() => setAdded(false), 3000);
   };
 
   return (
@@ -62,6 +66,8 @@ export default function Product() {
         <button onClick={handleAddToCart} className="primary add-to-cart">
           Add to Cart
         </button>
+        {added && <p className="product-added">Item added successfully!</p>}
+
         <TrustIndicators />
       </div>
     </div>
