@@ -8,13 +8,12 @@
 .product-image img {
   width: 100%;
   max-width: 500px;
-  border-radius: 0.75rem;
-  padding: 22px 2rem;
 }
 .product-image {
   background-color: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  line-height: 0;
 }
 .product-details {
   max-width: 600px;
