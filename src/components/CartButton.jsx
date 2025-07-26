@@ -9,7 +9,6 @@ export default function CartButton({ handleClick }) {
 
   return (
     <Link to={'/cart'} className="cart-btn link-btn primary clickable">
-      {' '}
       <ShoppingCart />
       {totalItems > 0 && (
         <div className="cart-btn-total">
