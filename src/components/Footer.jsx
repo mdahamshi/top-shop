@@ -1,21 +1,12 @@
 import React from 'react';
 import './css/Footer.css';
-import { useApp } from '../context/AppContext';
 
-export default function Footer() {
-  const { appName } = useApp();
+export default function Footer({ left, right, children }) {
   return (
     <footer className="sb-footer">
-      <div>
-        <p>
-          {appName} © 2025
-          <br />
-          Built with ❤️ by{' '}
-          <a href="https://sarawebs.com" target="_blank" rel="noopener">
-            SaraWebs
-          </a>
-        </p>
-      </div>
+      {left && <div>{left}</div>}
+      {children}
+      {right && <div>{right}</div>}
     </footer>
   );
 }

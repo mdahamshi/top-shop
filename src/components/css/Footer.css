@@ -5,11 +5,3 @@
   width: 100%;
   background-color: white;
 }
-
-footer a {
-  color: var(--sb-theme-color);
-  text-decoration: none;
-}
-footer p {
-  text-align: center;
-}

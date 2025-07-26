@@ -7,7 +7,7 @@ import LoadingOverlay from '../components/LoadingOverly';
 import { links } from '../assets/links';
 import { getRandomColor } from '@sarawebs/sb-utils';
 import { useApp } from '../context/AppContext';
-
+import Copyright from '../components/Copyright';
 export default function Root() {
   const navigation = useNavigation();
   const { appName } = useApp();
@@ -32,7 +32,9 @@ export default function Root() {
         <Outlet />
       </main>
 
-      <Footer />
+      <Footer>
+        <Copyright appName={appName} />
+      </Footer>
     </>
   );
 }
