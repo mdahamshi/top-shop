@@ -2,7 +2,6 @@ import './css/Header.css';
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
-import { ShoppingCart } from 'lucide-react';
 import CartButton from './CartButton';
 export default function Header({
   title,

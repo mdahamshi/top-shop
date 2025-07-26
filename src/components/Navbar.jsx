@@ -1,4 +1,3 @@
-import React from 'react';
 import './css/Navbar.css';
 import { NavLink } from 'react-router-dom';
 export default function Navbar({ links = [] }) {
