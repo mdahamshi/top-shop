@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { createContext, useContext, useEffect, useState, useMemo } from 'react';
 import { useApp } from './AppContext';
 
 const CartContext = createContext();
@@ -6,13 +6,18 @@ export function CartProvider({ children }) {
   const { appName } = useApp();
   const storageCartName = `${appName}-cart`;
   const [items, setItems] = useState(() => {
-    const stored = localStorage.getItem(storageCartName);
-    return typeof stored === 'string' ? JSON.parse(stored) : [];
+    try {
+      const stored = localStorage.getItem(storageCartName);
+      return stored ? JSON.parse(stored) : [];
+    } catch (err) {
+      console.error('Failed to parse cart from localStorage:', err);
+      return [];
+    }
   });
 
   useEffect(() => {
     localStorage.setItem(storageCartName, JSON.stringify(items));
-  });
+  }, [items, storageCartName]);
 
   const addItem = (newItem) => {
     setItems((prev) => {
@@ -41,10 +46,13 @@ export function CartProvider({ children }) {
 
   const clearCart = () => setItems([]);
 
-  const totalItems = items.reduce((sum, item) => sum + item.quantity, 0);
-  const totalPrice = items.reduce(
-    (sum, item) => sum + item.price * item.quantity,
-    0
+  const totalItems = useMemo(
+    () => items.reduce((sum, item) => sum + item.quantity, 0),
+    [items]
+  );
+  const totalPrice = useMemo(
+    () => items.reduce((sum, item) => sum + item.price * item.quantity, 0),
+    [items]
   );
 
   return (

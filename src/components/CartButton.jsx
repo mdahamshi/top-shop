@@ -4,7 +4,7 @@ import { ShoppingCart } from 'lucide-react';
 import { useCart } from '../context/CartContext';
 import { Link } from 'react-router-dom';
 
-export default function CartButton({ handleClick }) {
+export default function CartButton() {
   const { totalItems } = useCart();
 
   return (
