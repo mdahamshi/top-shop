@@ -6,6 +6,7 @@ import TrustIndicators from '../components/TrustIndicators';
 import { useCart } from '../context/CartContext';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { renderStars } from '../utils/rednerStars';
 export async function loader({ params }) {
   const product = await fetchProducts({
     id: params.productId,
@@ -28,17 +29,6 @@ export default function Product() {
   const { title, image, price, description } = { ...product };
   const { rate, count } = { ...product.rating };
 
-  const fullStars = Math.floor(rate);
-  const hasHalfStar = rate % 1 >= 0.5;
-  const emptyStars = 5 - fullStars - (hasHalfStar ? 1 : 0);
-  const renderStars = () => {
-    const stars = [];
-    for (let i = 0; i < fullStars; i++) stars.push('★');
-    if (hasHalfStar) stars.push('☆');
-    for (let i = 0; i < emptyStars; i++) stars.push('☆');
-    return stars.join(' ');
-  };
-
   const handleAddToCart = () => {
     addItem({
       id: product.id,
@@ -59,7 +49,7 @@ export default function Product() {
       <div className="product-details">
         <h1 className="product-title">{title}</h1>
         <div className="product-rating">
-          <span className="stars">{renderStars()}</span>
+          <span className="stars">{renderStars(rate)}</span>
           <span className="count">({count} reviews)</span>
         </div>
         <div className="product-price">${price.toFixed(2)}</div>
