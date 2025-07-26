@@ -44,14 +44,9 @@
 
 .grid-card-rating {
   font-size: 0.95rem;
-  color: #f4c150;
   display: flex;
   align-items: center;
   gap: 0.4rem;
-}
-
-.grid-card-rating .stars {
-  letter-spacing: 1px;
 }
 
 .grid-card-rating .count {
