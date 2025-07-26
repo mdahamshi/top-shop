@@ -1,4 +1,3 @@
-import React from 'react';
 import './css/Product.css';
 import { fetchProducts } from '../api/fakeProducts';
 import { useLoaderData } from 'react-router-dom';
@@ -6,7 +5,7 @@ import TrustIndicators from '../components/TrustIndicators';
 import { useCart } from '../context/CartContext';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { renderStars } from '../utils/rednerStars';
+import { StarRating } from '../components/StarRating';
 export async function loader({ params }) {
   const product = await fetchProducts({
     id: params.productId,
@@ -49,7 +48,7 @@ export default function Product() {
       <div className="product-details">
         <h1 className="product-title">{title}</h1>
         <div className="product-rating">
-          <span className="stars">{renderStars(rate)}</span>
+          <StarRating rate={rate} />
           <span className="count">({count} reviews)</span>
         </div>
         <div className="product-price">${price.toFixed(2)}</div>

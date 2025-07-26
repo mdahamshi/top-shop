@@ -4,7 +4,7 @@ import { fetchProducts } from '../api/fakeProducts';
 import { useLoaderData } from 'react-router-dom';
 import Griditem from '../components/GridLinkCard';
 import { useApp } from '../context/AppContext';
-import { renderStars } from '../utils/rednerStars';
+import { StarRating } from '../components/StarRating';
 
 export async function loader({ request }) {
   const products = await fetchProducts({ limit: 12 });
@@ -32,9 +32,7 @@ export default function Shop() {
                 <h3 className="grid-card-title">{child.title}</h3>
                 <div>
                   <div className="grid-card-rating">
-                    <span className="stars">
-                      {renderStars(child.rating.rate)}
-                    </span>
+                    <StarRating rate={child.rating.rate} />
                     <span className="count">({child.rating.count})</span>
                   </div>
                   <div className="grid-card-price">
