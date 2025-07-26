@@ -35,7 +35,6 @@ main {
   justify-content: flex-start;
   margin: auto;
   flex-grow: 1;
-  margin-top: var(--sb-header-height, 70px);
   max-width: var(--sb-max-content-width);
   padding: 24px;
   width: 100%;
