@@ -39,6 +39,7 @@ main {
   padding: 24px;
   width: 100%;
 }
+
 .flex-col {
   display: flex;
   flex-direction: column;
@@ -46,6 +47,7 @@ main {
   align-items: center;
   gap: 12px;
 }
+
 main {
   animation-duration: 0.5s;
   animation-name: animate-fade;
@@ -130,9 +132,7 @@ button:hover,
   transition: all 0.3s ease;
 }
 
-@media (hover: hover) {
-  button:hover,
-  .link-btn:hover {
-    border-color: var(--sb-theme-color);
-  }
+button:hover,
+.link-btn:hover {
+  border-color: var(--sb-theme-color);
 }
