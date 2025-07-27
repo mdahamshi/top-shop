@@ -6,7 +6,7 @@ export function StarRating({ rate, color = 'var(--sb-theme-color,gold)' }) {
   return (
     <div style={{ color: color, fontSize: '20px' }}>
       {'★'.repeat(full)}
-      {half ? '⯨' : ''}
+      {half ? '⯪' : ''}
       {'☆'.repeat(empty)}
     </div>
   );
