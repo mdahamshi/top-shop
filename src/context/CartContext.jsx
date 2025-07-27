@@ -36,6 +36,7 @@ function cartReducer(items, action) {
       return [];
     }
     case 'set': {
+      console.log(`setting cart: ${action.payload}`);
       return action.payload;
     }
     default:
@@ -44,20 +45,16 @@ function cartReducer(items, action) {
 }
 export function CartProvider({ children }) {
   const { appName } = useApp();
-  const storageCartName = `${appName}-cart`;
-  const [items, dispatch] = useReducer(cartReducer, []);
-
-  useEffect(() => {
+  const storageCartName = useMemo(() => `${appName}-cart`, [appName]);
+  const [items, dispatch] = useReducer(cartReducer, [], () => {
     try {
       const stored = localStorage.getItem(storageCartName);
-      if (stored) {
-        dispatch({ type: 'set', payload: JSON.parse(stored) });
-      }
+      return stored ? JSON.parse(stored) : [];
     } catch (err) {
-      console.error('Failed to parse cart from localStorage:', err);
-      dispatch({ type: 'clear' });
+      console.error('Failed to load cart from localStorage:', err);
+      return [];
     }
-  }, [storageCartName]);
+  });
 
   useEffect(() => {
     localStorage.setItem(storageCartName, JSON.stringify(items));
