@@ -1,13 +1,13 @@
+import './css/StarRating.css';
 export function StarRating({ rate, color = 'var(--sb-theme-color,gold)' }) {
-  const full = Math.floor(rate);
-  const half = rate % 1 >= 0.5 ? 1 : 0;
-  const empty = 5 - full - half;
+  const percent = `${(Math.min(rate, 5) / 5) * 100}%`;
 
   return (
-    <div style={{ color: color, fontSize: '20px' }}>
-      {'★'.repeat(full)}
-      {half ? '⯪' : ''}
-      {'☆'.repeat(empty)}
+    <div
+      className="star-rating"
+      style={{ '--star-percent': percent, '--star-color': color }}
+    >
+      <span></span>
     </div>
   );
 }
